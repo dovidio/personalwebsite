@@ -1,4 +1,41 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "Umberto's blog"
+languageCode = "it"
+title = "Umberto D'Ovidio"
 theme = "beautifulhugo"
+defaultContentLanguage = "en"
+
+[Params]
+  homeTitle = "Blog"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  wordCount = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+
+[languages]
+  [languages.it] 
+    contentDir = "content/it" # Italian
+  [languages.en]
+    contentDir = "content/en" # English   
+
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 1
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 3
+[[menu.main]]
+    name = "Now"
+    url = "page/now/"
+    weight = 3    
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3

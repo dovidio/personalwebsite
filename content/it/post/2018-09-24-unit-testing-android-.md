@@ -3,6 +3,8 @@ author: Umberto D'Ovidio
 date: "2018-09-24T00:00:00Z"
 description: Come testare i tuoi componenti Android con JUnit
 title: Testing su Android Parte 1 - JUnit e Unit Testing
+tags:
+  - testing
 visible: 1
 ---
 
