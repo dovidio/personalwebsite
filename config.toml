@@ -1,5 +1,5 @@
 baseURL = "http://example.org/"
-languageCode = "it"
+languageCode = "en-us"
 title = "Umberto D'Ovidio"
 theme = "beautifulhugo"
 defaultContentLanguage = "en"
@@ -8,6 +8,7 @@ defaultContentLanguage = "en"
   homeTitle = "Blog"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
+  mainSections = ["post","posts"]
   commit = false
   rss = true
   comments = true
@@ -18,19 +19,15 @@ defaultContentLanguage = "en"
   showRelatedPosts = true
 
 [languages]
-  [languages.it] 
-    contentDir = "content/it" # Italian
   [languages.en]
     contentDir = "content/en" # English   
+  [languages.it] 
+    contentDir = "content/it" # Italian
 
 [[menu.main]]
     name = "Blog"
     url = ""
     weight = 1
-[[menu.main]]
-    name = "About"
-    url = "page/about/"
-    weight = 3
 [[menu.main]]
     name = "Now"
     url = "page/now/"
