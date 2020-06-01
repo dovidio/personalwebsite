@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Umberto D&#39;Ovidio</title>
-    <link>http://dovidio.github.com/personalwebsite/page/</link>
+    <link>dovidio.github.com/personalwebsite/page/</link>
     <description>Recent content in Pages on Umberto D&#39;Ovidio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 May 2020 23:20:15 +0200</lastBuildDate>
     
-	<atom:link href="http://dovidio.github.com/personalwebsite/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="dovidio.github.com/personalwebsite/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Now</title>
-      <link>http://dovidio.github.com/personalwebsite/page/now/</link>
+      <link>dovidio.github.com/personalwebsite/page/now/</link>
       <pubDate>Sun, 24 May 2020 23:20:15 +0200</pubDate>
       
-      <guid>http://dovidio.github.com/personalwebsite/page/now/</guid>
+      <guid>dovidio.github.com/personalwebsite/page/now/</guid>
       <description>Work I&amp;rsquo;m lucky to contribute to the Kubernetes monitoring dashboard along with some amazing colleagues at Dynatrace. I&amp;rsquo;m working mostly with Java and Angular.
 Free time Summer is here, and with it also extreme trekking, bike trips and desperate german learning sessions.
 Music I have rediscovered this masterpiece: Devin Townsend - Ziltoid the Omniscient.
