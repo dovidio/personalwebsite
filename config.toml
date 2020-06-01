@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "Umberto D'Ovidio"
 theme = "beautifulhugo"
 defaultContentLanguage = "en"
-publishDir = "docs"
 
 [Params]
   homeTitle = "Blog"
