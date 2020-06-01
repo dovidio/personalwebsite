@@ -3,75 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/page/now/</loc>
+    <loc>http://dovidio.github.com/personalwebsite/page/now/</loc>
     <lastmod>2020-05-24T23:20:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="http://example.org/it/page/now/"
+                href="http://dovidio.github.com/personalwebsite/it/page/now/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/page/now/"
+                href="http://dovidio.github.com/personalwebsite/page/now/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/page/</loc>
+    <loc>http://dovidio.github.com/personalwebsite/page/</loc>
     <lastmod>2020-05-24T23:20:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="http://example.org/it/page/"
+                href="http://dovidio.github.com/personalwebsite/it/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/page/"
+                href="http://dovidio.github.com/personalwebsite/page/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://dovidio.github.com/personalwebsite/</loc>
     <lastmod>2020-05-24T23:20:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="http://example.org/it/"
+                href="http://dovidio.github.com/personalwebsite/it/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/"
+                href="http://dovidio.github.com/personalwebsite/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://dovidio.github.com/personalwebsite/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="http://example.org/it/categories/"
+                href="http://dovidio.github.com/personalwebsite/it/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/categories/"
+                href="http://dovidio.github.com/personalwebsite/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://dovidio.github.com/personalwebsite/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="http://example.org/it/tags/"
+                href="http://dovidio.github.com/personalwebsite/it/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/tags/"
+                href="http://dovidio.github.com/personalwebsite/tags/"
                 />
   </url>
   
