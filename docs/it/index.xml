@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Umberto D&#39;Ovidio</title>
-    <link>dovidio.github.com/personalwebsite/it/</link>
+    <link>dovidio.github.io/personalwebsite/it/</link>
     <description>Recent content on Umberto D&#39;Ovidio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 May 2020 23:20:15 +0200</lastBuildDate>
     
-	<atom:link href="dovidio.github.com/personalwebsite/it/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="dovidio.github.io/personalwebsite/it/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Now</title>
-      <link>dovidio.github.com/personalwebsite/it/page/now/</link>
+      <link>dovidio.github.io/personalwebsite/it/page/now/</link>
       <pubDate>Sun, 24 May 2020 23:20:15 +0200</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/page/now/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/page/now/</guid>
       <description>Lavoro Ho la fortuna di poter collaborare con dei fantastici colleghi nella realizzazione della dashboard di monitoraggio Kubernetes a Dynatrace. Lavoro principalmente con Java e Angular.
 Tempo libero L&amp;rsquo;estate e&amp;rsquo; iniziata, e con essa trekking molesto, viaggi in bici e studio matto e disperato del tedesco.
 Musica Ho riscoperto questo capolavoro Devin Townsend - Ziltoid the Omniscient.
@@ -25,148 +25,148 @@ Libri Ho appena finito Kubernetes Up and Running. Il prossimo libro e&amp;rsquo;
     
     <item>
       <title>Testing su Android Parte 1 - JUnit e Unit Testing</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2018-09-24-unit-testing-android-/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2018-09-24-unit-testing-android-/</link>
       <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2018-09-24-unit-testing-android-/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2018-09-24-unit-testing-android-/</guid>
       <description>&lt;p&gt;Stanco di provare le tue app Android manualmente per verificarne il funzionamento? Inizia a scrivere test!&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Modularità in java 9</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-11-19-java9-moduli/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-11-19-java9-moduli/</link>
       <pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-11-19-java9-moduli/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-11-19-java9-moduli/</guid>
       <description>&lt;p&gt;Una delle introduzioni più interessanti nella nuova versione di Java è senza dubbio quella dei moduli. I moduli permettono di descrivere le relazioni e le dipendenze all&amp;rsquo;interno del codice della tua applicazione.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Come gestire SQLite su Android senza diventare pazzo</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-09-30-gestire-sqlite-android/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-09-30-gestire-sqlite-android/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-09-30-gestire-sqlite-android/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-09-30-gestire-sqlite-android/</guid>
       <description>&lt;p&gt;Se vuoi salvare dati nella tua app Android, quasi sicuramente utilizzerai il database SQLite. Purtroppo però la documentazione ufficiale su come gestirlo lascia molto a desiderare. In questo post scopriremo alcune tecniche che possono sembrare controintuitive, ma ti risparmieranno un sacco di grattacapi.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Gestisci multipli timer con MultiTimer</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-09-19-multitimer-android/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-09-19-multitimer-android/</link>
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-09-19-multitimer-android/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-09-19-multitimer-android/</guid>
       <description>&lt;p&gt;Recentemente ho pubblicato per la prima volta un&amp;rsquo;app nel Google Play Store con il mio account sviluppatore. Vuoi sapere di cosa si tratta?&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Utilizzare Volley per eseguire richieste http</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-08-24-volley-android/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-08-24-volley-android/</link>
       <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-08-24-volley-android/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-08-24-volley-android/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Volley&lt;/strong&gt; è una libreria HTTP creata da Google che permette di fare operazioni di networking in Android in maniera semplice e veloce.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Passare da un Activity all&#39;altra con gli Intent</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-08-17-guida-intent-android/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-08-17-guida-intent-android/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-08-17-guida-intent-android/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-08-17-guida-intent-android/</guid>
       <description>&lt;p&gt;Ogni sviluppatore Android che si rispetti deve conoscere molto bene l&amp;rsquo;utilizzo degli &lt;strong&gt;Intent&lt;/strong&gt;, questo perchè sono una delle classi più usate in assoluto. Se li hai già utilizzati ma non hai mai approfondito il discorso, allora sei nel posto giusto.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Leggere i QR Code con Swift</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-08-10-qrcode-ios/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-08-10-qrcode-ios/</link>
       <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-08-10-qrcode-ios/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-08-10-qrcode-ios/</guid>
       <description>&lt;p&gt;La scorsa settimana ho scritto un breve &lt;a href=&#34;http://dovid.io/2017/08/03/qrcode-android.html&#34;&gt;tutorial&lt;/a&gt; su come includere la funzionalità di lettura dei qr code nella tua app Android. Per par condicio, oggi vedremo come farlo in iOS. Sfrutteremo la libreria che ci viene messa a disposizione da iOS chiamata &lt;a href=&#34;https://developer.apple.com/av-foundation/&#34;&gt;AVFoundation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Leggere i QR Code in Android</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-08-03-qrcode-android/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-08-03-qrcode-android/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-08-03-qrcode-android/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-08-03-qrcode-android/</guid>
       <description>&lt;p&gt;Come si integra la funzionalità di lettura dei QR code in un&amp;rsquo;app Android? Scopriamolo insieme!&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Semplificare il parsing Json con Gson</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2017-07-30-gson-parsing/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2017-07-30-gson-parsing/</link>
       <pubDate>Sun, 30 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2017-07-30-gson-parsing/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2017-07-30-gson-parsing/</guid>
       <description>&lt;p&gt;Se nella tua vita di programmatore Java ti trovi spesso ad effettuare serializzazione e deserializzazione Json, dovresti prendere in considerazione l&amp;rsquo;utilizzo di una libreria fatta apposta per velocizzare questi task. &lt;a href=&#34;https://github.com/google/gson&#34;&gt;Gson&lt;/a&gt; è una libreria Java creata da Google che permette di convertire un oggetto Java in un oggetto Json e viceversa in modo veloce ed efficiente. Ci sono molte librerie Java capaci di fare ciò, ma Gson è una fra le poche che non richiede l&amp;rsquo;uso di annotazioni ne tantomeno del codice sorgente delle classi che vogliamo convertire in Json.
 Contiene due metodi chiamati &lt;em&gt;fromJson()&lt;/em&gt; e &lt;em&gt;toJson()&lt;/em&gt; che sono l&amp;rsquo;equivalente dei metodi Java &lt;em&gt;toString()&lt;/em&gt; e &lt;em&gt;fromString()&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Implementazione di uno stack in C</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-11-07-stack-in-c/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-11-07-stack-in-c/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-11-07-stack-in-c/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-11-07-stack-in-c/</guid>
       <description>&lt;h2 id=&#34;che-cosè-uno-stack&#34;&gt;Che cos&amp;rsquo;è uno stack?&lt;/h2&gt;
 &lt;p&gt;Uno stack è un insieme dinamico di elementi, dove ogni elemento viene inserito &amp;ldquo;sopra&amp;rdquo; all&amp;rsquo;altro. Possiamo pensare ad uno stack come ad una pila di piatti, dove ogni piatto è un elemento. Essenzialmene uno stack implementa due tipi di operazioni, chiamate &lt;strong&gt;PUSH&lt;/strong&gt; e &lt;strong&gt;POP&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Generatori di siti statici, cosa sono e perchè usarli</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-09-17-generatori-siti-statici/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-09-17-generatori-siti-statici/</link>
       <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-09-17-generatori-siti-statici/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-09-17-generatori-siti-statici/</guid>
       <description>&lt;p&gt;Il modo di fare blogging è cambiato drasticamente negli ultimi anni. Al giorno d&amp;rsquo;oggi abbiamo a disposizione un&amp;rsquo;infinità di strumenti utilizzabili a nostro vantaggio. Una volta creare un sito od un blog era appannaggio di pochi, ma con l&amp;rsquo;avvento dei &lt;a href=&#34;https://it.wikipedia.org/wiki/Content_management_system&#34;&gt;content management system&lt;/a&gt; (CMS) letteralmente chiunque può crearne uno, infatti anche mia nonna ha un blog (non sto scherzando).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Italianizzare le date in Jekyll</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-09-16-italianizzare-date-jekyll/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-09-16-italianizzare-date-jekyll/</link>
       <pubDate>Fri, 16 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-09-16-italianizzare-date-jekyll/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-09-16-italianizzare-date-jekyll/</guid>
       <description>&lt;p&gt;Una modifiche obbligate che noi italiani dobbiamo fare per il nostro blog jekyll è quella di cambiare il formato delle date dei post. Infatti Jekyll utilizza di default i mesi in lingua inglese.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sfidare il libero arbitrio dal proprio browser?</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-09-14-esperimento-libet-html5/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-09-14-esperimento-libet-html5/</link>
       <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-09-14-esperimento-libet-html5/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-09-14-esperimento-libet-html5/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://it.wikipedia.org/wiki/Benjamin_Libet&#34;&gt;L&amp;rsquo;esperimento di Libet&lt;/a&gt; è senza dubbio uno dei più famosi nella storia della psicologia, e scatena da anni ampi dibattiti.
 La procedura è variata nel corso degli anni, tuttavia si può cercare di sintetizzare la procedura in 6 punti.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Struttura delle cartelle di Jekyll</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-09-13-struttura-cartelle-jekyll/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-09-13-struttura-cartelle-jekyll/</link>
       <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-09-13-struttura-cartelle-jekyll/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-09-13-struttura-cartelle-jekyll/</guid>
       <description>&lt;p&gt;Per utilizzare Jekyll con successo, è utile conoscere la struttura delle sue cartelle. In questo articolo scopriremo i file e le cartelle più importanti.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Supportare le cards Twitter con Jekyll</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-09-12-twitter-cards-and-jekyll/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-09-12-twitter-cards-and-jekyll/</link>
       <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-09-12-twitter-cards-and-jekyll/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-09-12-twitter-cards-and-jekyll/</guid>
       <description>&lt;p&gt;Ho appena modificato il mio sito, aggiungendo il supporto per le twitter cards. Ho utilizzato la &lt;a href=&#34;https://dev.twitter.com/cards/types/summary&#34;&gt;Summary Card&lt;/a&gt;, in quanto credo sia la più appropriata per il mio sito. La card apparirà sotto il tweet da 140 caratteri.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Come pubblicare il proprio sito jekyll su Github Pages gratis</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-08-19-jekyll-github-pages/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-08-19-jekyll-github-pages/</link>
       <pubDate>Fri, 19 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-08-19-jekyll-github-pages/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-08-19-jekyll-github-pages/</guid>
       <description>&lt;p&gt;In un &lt;a href=&#34;%7B%7Bsite.url%7D%7D/2016/08/15/jekyll.html&#34;&gt;post recente&lt;/a&gt; ho introdotto Jekyll e i
 suoi vantaggi rispetto a Wordpress. Brevemente, Jekyll è più sicuro, veloce e consente
 di poter ospitare gratuitamente il tuo sito su &lt;a href=&#34;https://pages.github.com/&#34;&gt;github pages&lt;/a&gt;. Oggi vedremo i passi da compiere per poter ospitare il tuo sito su github pages.&lt;/p&gt;</description>
@@ -174,10 +174,10 @@ di poter ospitare gratuitamente il tuo sito su &lt;a href=&#34;https://pages.git
     
     <item>
       <title>Da Wordpress a Jekyll</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-08-15-jekyll/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-08-15-jekyll/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-08-15-jekyll/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-08-15-jekyll/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt; è un ottimo &lt;em&gt;content management system&lt;/em&gt; e fà egregiamente il suo dovere,
 tuttavia spesso fà anche troppo. Quando ho creato il mio sito per la prima volta, avevo bisogno di
 una semplice piattaforma che mi permettesse di scrivere posts e di intervenire sul codice ove ve ne fosse bisogno. Wordpress consente di fare tutto ciò e anche di più, ma ad un prezzo: la velocità.&lt;/p&gt;</description>
@@ -185,66 +185,66 @@ una semplice piattaforma che mi permettesse di scrivere posts e di intervenire s
     
     <item>
       <title>Crea la tua launcher icon in meno di un minuto!</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-07-27-launcher-icon/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-07-27-launcher-icon/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-07-27-launcher-icon/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-07-27-launcher-icon/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://romannurik.github.io/AndroidAssetStudio/&#34;&gt;Android Asset Studio&lt;/a&gt; è un ottimo strumento che permette di creare icone per le tue App Android in pochi click. Si possono selezionare diverse icone create dai designer del material design team, o puoi utilizzare le tue immagini. Ne faccio spesso uso quando ho bisogno di una launcher icon, ovvero l’icona che viene visualizzata nel dispositivo e che, una volta premuta, permette di avviare l’applicazione.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Butterknife, l&#39;arma contro il boilerplate code</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-07-20-butterknife/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-07-20-butterknife/</link>
       <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-07-20-butterknife/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-07-20-butterknife/</guid>
       <description>&lt;p&gt;Nella programmazione, il boilerplate code o boilerplate si riferisce a sezioni di codice che devono essere incluse in molti posti senza cambiare molto. E’ un termine che si utilizza molto quando si parla di linguaggi di programmazione considerati verbosi, nei quali il programmatore deve scrivere molto codice senza produrre molto.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>I Migliori Siti Per Imparare A Programmare</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-07-13-i-migliori-siti-per-imparare/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-07-13-i-migliori-siti-per-imparare/</link>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-07-13-i-migliori-siti-per-imparare/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-07-13-i-migliori-siti-per-imparare/</guid>
       <description>&lt;p&gt;Viviamo in anni magnifici per tutti gli aspiranti programmatori. Ormai in rete è pieno di ottimi siti il cui scopo è insegnare  a programmare.
 Essendo io stesso uno delle tante persone che ha deciso di fare un cambiamento di carriera e buttandomi sulla programmazione, posso consigliarti alcune risorse che ho trovato molto utili.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nostalgia per casa Vianello</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-07-03-nostalgia-per-casa-vianello/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-07-03-nostalgia-per-casa-vianello/</link>
       <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-07-03-nostalgia-per-casa-vianello/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-07-03-nostalgia-per-casa-vianello/</guid>
       <description>&lt;p&gt;Spesso da piccolo trascorrevo del tempo a casa di mia nonna, e mi ricordo che la televisione era fissa su canale 4. Non so bene perchè, ma quella sitcom mi piaceva.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sono (ri)passato a Mac</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-06-29-sono-passato-a-mac/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-06-29-sono-passato-a-mac/</link>
       <pubDate>Wed, 29 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-06-29-sono-passato-a-mac/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-06-29-sono-passato-a-mac/</guid>
       <description>&lt;p&gt;Ebbene sì, dopo anni di esilio ho deciso di vendermi un rene per acquistare un macbook pro.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Come Utilizzare il DatePicker in AndroidStudio</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-06-22-come-utilizzare-il-date-picker/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-06-22-come-utilizzare-il-date-picker/</link>
       <pubDate>Wed, 22 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-06-22-come-utilizzare-il-date-picker/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-06-22-come-utilizzare-il-date-picker/</guid>
       <description>&lt;p&gt;Il DatePicker permette di scegliere una data costituita da giorno, mese e anno.
 In questo post spieghero’ come creare un datepicker dialog.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Unity Solarized (Facciamo bello il nostro desktop)</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2016-01-15-unity-solarized/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2016-01-15-unity-solarized/</link>
       <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2016-01-15-unity-solarized/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2016-01-15-unity-solarized/</guid>
       <description>Ecco come appare il mio Ubuntu Desktop:
 Non male, vero?
 Ecco i passi che ho seguito per personalizzarlo:
@@ -256,10 +256,10 @@ sudo apt-get install numix-wallpaper-* In seguito, scarica la unity-tweak tool, 
     
     <item>
       <title>Come creare una chiavetta di installazione Ubuntu</title>
-      <link>dovidio.github.com/personalwebsite/it/post/2015-10-10-come-creare-una-chiavetta-di-installazione-ubuntu/</link>
+      <link>dovidio.github.io/personalwebsite/it/post/2015-10-10-come-creare-una-chiavetta-di-installazione-ubuntu/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>dovidio.github.com/personalwebsite/it/post/2015-10-10-come-creare-una-chiavetta-di-installazione-ubuntu/</guid>
+      <guid>dovidio.github.io/personalwebsite/it/post/2015-10-10-come-creare-una-chiavetta-di-installazione-ubuntu/</guid>
       <description>&lt;p&gt;Oggi vedremo come creare una chiavetta usb da cui possiamo installare Ubuntu.&lt;/p&gt;
 &lt;p&gt;Il procedimento è molto semplice. Prima di tutto scaricate la iso di Ubuntu da
 &lt;a href=&#34;http://www.ubuntu-it.org/&#34;&gt;questa pagina&lt;/a&gt;. Consiglio vivamente di scegliere la

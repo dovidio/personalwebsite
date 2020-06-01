@@ -1,4 +1,4 @@
-baseURL = "dovidio.github.com/personalwebsite"
+baseURL = "dovidio.github.io/personalwebsite/"
 languageCode = "en-us"
 title = "Umberto D'Ovidio"
 theme = "beautifulhugo"
