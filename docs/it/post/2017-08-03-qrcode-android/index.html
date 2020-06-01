@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="it" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Leggere i QR Code in Android - Umberto D&#39;Ovidio</title>
+  <meta name="description" content="Come creare un&#39;app che permette di legger i QR code in Android?"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Umberto D\u0027Ovidio",
+    
+    "url": "http:\/\/example.org\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/example.org\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/example.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/example.org\/it\/post\/2017-08-03-qrcode-android\/",
+          "name": "Leggere i q r code in android"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Umberto D\u0027Ovidio"
+  },
+  "headline": "Leggere i QR Code in Android",
+  "description" : "Come creare un\u0027app che permette di legger i QR code in Android?",
+  "inLanguage" : "it",
+  "wordCount":  532 ,
+  "datePublished" : "2017-08-03T00:00:00",
+  "dateModified" : "2017-08-03T00:00:00",
+  "image" : "http:\/\/example.org\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/example.org\/it\/post\/2017-08-03-qrcode-android\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/example.org\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/example.org\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Leggere i QR Code in Android" />
+<meta property="og:description" content="Come creare un&#39;app che permette di legger i QR code in Android?">
+<meta property="og:image" content="http://example.org/images/qrcode.png" />
+<meta property="og:url" content="http://example.org/it/post/2017-08-03-qrcode-android/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Umberto D&#39;Ovidio" />
+
+  <meta name="twitter:title" content="Leggere i QR Code in Android" />
+  <meta name="twitter:description" content="Come creare un&#39;app che permette di legger i QR code in Android?">
+  <meta name="twitter:image" content="http://example.org/images/qrcode.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='http://example.org/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.72.0" />
+  <link rel="alternate" href="http://example.org/it/index.xml" type="application/rss+xml" title="Umberto D&#39;Ovidio"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="http://example.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://example.org/css/syntax.css" /><link rel="stylesheet" href="http://example.org/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Attiva/disattiva la navigazione</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/it/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Now" href="/it/page/now/">Now</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/it/tags">Tags</a>
+            </li>
+          
+        
+
+        
+          
+            <li>
+              
+                
+                  <a href="/en" lang="en">en</a>
+                
+              
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Leggere i QR Code in Android</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Redatto il August 3, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minuti
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;532&nbsp;parole
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Umberto D'Ovidio
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Come si integra la funzionalità di lettura dei QR code in un&rsquo;app Android? Scopriamolo insieme!</p>
+<p>Ho preparato un semplice tutorial che fornisce un ottimo esempio di come affrontare il problema. La nostra app sarà in grado di leggere i QR code e di aprire un browser se  l&rsquo;informazione codificata nel QR code è un url valido. Puoi trovare il codice sorgente su <a href="https://github.com/Cyborg101/dovidioTutorials/tree/master/QrCodeReader-android">Github</a>.</p>
+<p>La funzionalità di lettura del QR code non è integrata nella sdk android, ma bisogna, se non vogliamo fare tutto da soli, importare una libreria.
+La libreria più famosa e storica è senza dubbio <a href="https://github.com/zxing/zxing">Zxing</a> (Zebra crossing). Noi ci serviremo di un&rsquo;altra <a href="https://github.com/dm77/barcodescanner">libreria</a> basata su zxing che rende tutto più semplice.</p>
+<p>Iniziamo dunque a darci dentro col codice! Per prima cosa, apriamo Android studio e aggiungiamo la libreria nel file  build.gradle a livello app.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">compile <span style="color:#e6db74">&#39;me.dm7.barcodescanner:zxing:1.9.4&#39;</span></code></pre></div>
+<p>Nota che non consiglio di usare l&rsquo;ultima versione (che al momento è la 1.9.5) perchè sembra non funzionare in portrait mode, almeno non nel mio galaxy s5 mini.</p>
+<p>Dobbiamo poi chiedere l&rsquo;autorizzazione per accedere alla fotocamera. Per farlo aggiungiamo la seguente riga al file <strong>Android Manifest.xml</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.CAMERA&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
+<p>A partire da Android 6.0 (Marshmallow) le autorizzazioni vengono richieste a runtime, le richiederemo dunque nella nostra Activity Java.</p>
+<p>Creiamo dunque una empty Activity chiamata QrCodeReader, e aggiungiamoci il seguente codice:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#f92672">package</span> io<span style="color:#f92672">.</span><span style="color:#a6e22e">dovid</span><span style="color:#f92672">.</span><span style="color:#a6e22e">qrcodereader</span><span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> android.Manifest<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.app.Activity<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.app.AlertDialog<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.content.DialogInterface<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.content.Intent<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.content.pm.PackageManager<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.net.Uri<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.os.Bundle<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.support.v4.app.ActivityCompat<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.support.v4.content.ContextCompat<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.webkit.URLUtil<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.google.zxing.Result<span style="color:#f92672">;</span>
+
+
+<span style="color:#f92672">import</span> me.dm7.barcodescanner.zxing.ZXingScannerView<span style="color:#f92672">;</span>
+
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QrCodeReader</span> <span style="color:#66d9ef">extends</span> Activity <span style="color:#66d9ef">implements</span> ZXingScannerView<span style="color:#f92672">.</span><span style="color:#a6e22e">ResultHandler</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> ZXingScannerView mScannerView<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> PERMESSO_FOTOCAMERA <span style="color:#f92672">=</span> <span style="color:#ae81ff">4725</span><span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle state<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>state<span style="color:#f92672">);</span>
+        <span style="color:#75715e">// Richiediamo i permessi a runtime (per tutti i dispositivi &gt;= Android 6.0)
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>ContextCompat<span style="color:#f92672">.</span><span style="color:#a6e22e">checkSelfPermission</span><span style="color:#f92672">(</span>QrCodeReader<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> Manifest<span style="color:#f92672">.</span><span style="color:#a6e22e">permission</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CAMERA</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">!=</span> PackageManager<span style="color:#f92672">.</span><span style="color:#a6e22e">PERMISSION_GRANTED</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// richiediamo il permesso di utilizzare la fotocamera
+</span><span style="color:#75715e"></span>            ActivityCompat<span style="color:#f92672">.</span><span style="color:#a6e22e">requestPermissions</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span>
+                    <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>Manifest<span style="color:#f92672">.</span><span style="color:#a6e22e">permission</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CAMERA</span><span style="color:#f92672">},</span>
+                    <span style="color:#ae81ff">1</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        mScannerView <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ZXingScannerView<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>   <span style="color:#75715e">// Inizializziamo la nostra scanner view
+</span><span style="color:#75715e"></span>        setContentView<span style="color:#f92672">(</span>mScannerView<span style="color:#f92672">);</span> <span style="color:#75715e">// settiamo la nostra scannerview come content view
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResume</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onResume</span><span style="color:#f92672">();</span>
+        mScannerView<span style="color:#f92672">.</span><span style="color:#a6e22e">setResultHandler</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+        mScannerView<span style="color:#f92672">.</span><span style="color:#a6e22e">startCamera</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onPause</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onPause</span><span style="color:#f92672">();</span>
+        mScannerView<span style="color:#f92672">.</span><span style="color:#a6e22e">stopCamera</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleResult</span><span style="color:#f92672">(</span>Result rawResult<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        String url <span style="color:#f92672">=</span> rawResult<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">();</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>url<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>URLUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">isValidUrl</span><span style="color:#f92672">(</span>url<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            AlertDialog dialog <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AlertDialog<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">).</span>
+                    setTitle<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Attenzione&#34;</span><span style="color:#f92672">).</span>
+                    setMessage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Il qr code non contiene un url!&#34;</span><span style="color:#f92672">).</span>
+                    setPositiveButton<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Qr code&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> DialogInterface<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+                        <span style="color:#a6e22e">@Override</span>
+                        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>DialogInterface dialogInterface<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                            dialogInterface<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">();</span>
+                        <span style="color:#f92672">}</span>
+                    <span style="color:#f92672">}).</span>
+                    show<span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            openBrowser<span style="color:#f92672">(</span>url<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        mScannerView<span style="color:#f92672">.</span><span style="color:#a6e22e">resumeCameraPreview</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">openBrowser</span><span style="color:#f92672">(</span>String url<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span>Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span><span style="color:#f92672">,</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>url<span style="color:#f92672">));</span>
+        startActivity<span style="color:#f92672">(</span>intent<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Qualche commento sul codice. Prima di tutto non utilizziamo un file xml come layout in quanto usiamo la nostra ScannerView a tutto schermo. Una volta che abbiamo creato la nostra ScannerView e settato la nostra ContentView, abbiamo un QR code reader pronto per essere utilizzato! Non solo, legge anche numerosi formati di codice a barre! Infatti è possibile specificare quali formati ci interessano attraverso il metodo setFormats() chiamato sull&rsquo;oggetto ScannerView.
+Nota che abbiamo inoltre incluso il codice che chiede a runtime il permesso di accedere alla fotocamera.</p>
+<p>Una volta che lo scanner ha effettuato la lettura, chiama il metodo handleResult dove ci assicuriamo che il contenuto del QR code è un url che visualizziamo a browser. Se così non fosse avvertiamo l&rsquo;utente con un alert dialog.</p>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-03-qrcode-android%2f&amp;text=Leggere%20i%20QR%20Code%20in%20Android&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-03-qrcode-android%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-03-qrcode-android%2f&amp;title=Leggere%20i%20QR%20Code%20in%20Android" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-03-qrcode-android%2f&amp;title=Leggere%20i%20QR%20Code%20in%20Android" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-03-qrcode-android%2f&amp;title=Leggere%20i%20QR%20Code%20in%20Android" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-03-qrcode-android%2f&amp;description=Leggere%20i%20QR%20Code%20in%20Android" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://example.org/it/post/2017-07-30-gson-parsing/" data-toggle="tooltip" data-placement="top" title="Semplificare il parsing Json con Gson">&larr; Articolo precedente</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://example.org/it/post/2017-08-10-qrcode-ios/" data-toggle="tooltip" data-placement="top" title="Leggere i QR Code con Swift">Articolo successivo &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Sviluppato con Hugo v0.72.0</a> &nbsp;&bull;&nbsp; Tema <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adattato da <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="http://example.org/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://example.org/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="it" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Leggere i QR Code con Swift - Umberto D&#39;Ovidio</title>
+  <meta name="description" content="Come creare un&#39;app che permette di legger i QR code in iOS usando Swift?"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Umberto D\u0027Ovidio",
+    
+    "url": "http:\/\/example.org\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/example.org\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/example.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/example.org\/it\/post\/2017-08-10-qrcode-ios\/",
+          "name": "Leggere i q r code con swift"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Umberto D\u0027Ovidio"
+  },
+  "headline": "Leggere i QR Code con Swift",
+  "description" : "Come creare un\u0027app che permette di legger i QR code in iOS usando Swift?",
+  "inLanguage" : "it",
+  "wordCount":  580 ,
+  "datePublished" : "2017-08-10T00:00:00",
+  "dateModified" : "2017-08-10T00:00:00",
+  "image" : "http:\/\/example.org\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/example.org\/it\/post\/2017-08-10-qrcode-ios\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/example.org\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/example.org\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Leggere i QR Code con Swift" />
+<meta property="og:description" content="Come creare un&#39;app che permette di legger i QR code in iOS usando Swift?">
+<meta property="og:url" content="http://example.org/it/post/2017-08-10-qrcode-ios/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Umberto D&#39;Ovidio" />
+
+  <meta name="twitter:title" content="Leggere i QR Code con Swift" />
+  <meta name="twitter:description" content="Come creare un&#39;app che permette di legger i QR code in iOS usando Swift?">
+  <meta name="twitter:card" content="summary" />
+  <link href='http://example.org/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.72.0" />
+  <link rel="alternate" href="http://example.org/it/index.xml" type="application/rss+xml" title="Umberto D&#39;Ovidio"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="http://example.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://example.org/css/syntax.css" /><link rel="stylesheet" href="http://example.org/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Attiva/disattiva la navigazione</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/it/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Now" href="/it/page/now/">Now</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/it/tags">Tags</a>
+            </li>
+          
+        
+
+        
+          
+            <li>
+              
+                
+                  <a href="/en" lang="en">en</a>
+                
+              
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Leggere i QR Code con Swift</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Redatto il August 10, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minuti
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;580&nbsp;parole
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Umberto D'Ovidio
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>La scorsa settimana ho scritto un breve <a href="http://dovid.io/2017/08/03/qrcode-android.html">tutorial</a> su come includere la funzionalità di lettura dei qr code nella tua app Android. Per par condicio, oggi vedremo come farlo in iOS. Sfrutteremo la libreria che ci viene messa a disposizione da iOS chiamata <a href="https://developer.apple.com/av-foundation/">AVFoundation</a>.</p>
+<p>La nostra app sarà in grado di leggere un QR code e aprirà un web browser nel caso in cui l&rsquo;informazione letta dal QR code sia un url valido.</p>
+<p>Ci serviremo di due classi: una per la lettura del QR code e una per aprire il web browser.</p>
+<h3 id="lettura-qr-code">Lettura QR Code</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AVFoundation</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    <span style="color:#66d9ef">var</span> captureSession:AVCaptureSession?
+    <span style="color:#66d9ef">var</span> videoPreviewLayer:AVCaptureVideoPreviewLayer?
+    <span style="color:#66d9ef">var</span> qrCodeFrameView:UIView?</code></pre></div>
+<p>Per prima cosa, la nostra classe deve implementare il protocollo <strong>AVCaptureMetadataOutputObjectsDelegate</strong>, che si trova nella libreria <strong>AVFoundation</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+        <span style="color:#66d9ef">super</span>.viewDidLoad()
+        
+        <span style="color:#66d9ef">let</span> captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        
+        <span style="color:#66d9ef">do</span> {
+            <span style="color:#66d9ef">let</span> input = <span style="color:#66d9ef">try</span> AVCaptureDeviceInput(device: captureDevice)
+            captureSession = AVCaptureSession()
+            captureSession?.addInput(input)
+            
+            <span style="color:#66d9ef">let</span> captureMetadataOutput = AVCaptureMetadataOutput()
+            captureSession?.addOutput(captureMetadataOutput)
+            
+            captureMetadataOutput.setMetadataObjectsDelegate(<span style="color:#66d9ef">self</span>, queue: DispatchQueue.main)
+            
+            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+            
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            videoPreviewLayer?.frame = view.layer.bounds
+            view.layer.addSublayer(videoPreviewLayer!)
+            
+            captureSession?.startRunning()
+            
+            <span style="color:#75715e">// oggetto che utilizziamo per evidenziare il QR code</span>
+            qrCodeFrameView = UIView()
+            
+            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> qrCodeFrameView = qrCodeFrameView {
+                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeFrameView.layer.borderWidth = <span style="color:#ae81ff">2</span>
+                view.addSubview(qrCodeFrameView)
+                view.bringSubview(toFront: qrCodeFrameView)
+            }
+            
+        } <span style="color:#66d9ef">catch</span> {
+            print(error)
+            <span style="color:#66d9ef">return</span>
+        }
+        
+    }</code></pre></div>
+<p>Attenzione a non dimenticarsi di importare la libreria! Per leggere i QR Code ci serviremo di cinque oggetti: <strong>AVCaptureDevice</strong>, <strong>AVCaptureDeviceInput</strong>, <strong>AVCaptureSession</strong>, <strong>AVCaptureMetadataOutput</strong>, <strong>AVCapturePreviewLayer</strong>.
+Il primo rappresenta il nostro dispositivo fisico e le proprietà associate ad esso. Il nostro dispositivo genera input che viene fornito all&rsquo;oggetto <strong>AVCaptureSession</strong>. La nostra sessione di cattura poi viene fornita all&rsquo;oggetto <strong>AVCaptureMetadataOutput</strong> al quale forniamo i tipi di metadati che stiamo cercando (ovvero il QR code) e inoltre settiamo la nostra classe come <strong>Delegate</strong> di questo oggetto.
+Dobbiamo inoltre mostrare il contenuto della sessione, ovvero la cattura della fotocamera utilizzando l&rsquo;oggetto <strong>AVCaptureVideoPreviewLayer</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">captureOutput</span>(<span style="color:#66d9ef">_</span> captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]<span style="color:#f92672">!</span>, from connection: AVCaptureConnection!) {
+        
+        <span style="color:#66d9ef">if</span> metadataObjects == <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> metadataObjects.count == <span style="color:#ae81ff">0</span> {
+            qrCodeFrameView?.frame = CGRect.zero
+            <span style="color:#66d9ef">return</span>
+        }
+        
+        <span style="color:#66d9ef">let</span> metadataObj = metadataObjects[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">as</span>! AVMetadataMachineReadableCodeObject
+        <span style="color:#66d9ef">if</span> metadataObj.type == AVMetadataObjectTypeQRCode {
+            
+            <span style="color:#66d9ef">let</span> qrCodeObject = videoPreviewLayer?.transformedMetadataObject(<span style="color:#66d9ef">for</span>: metadataObj)
+            qrCodeFrameView?.frame = qrCodeObject!.bounds
+            
+            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> urlString  = metadataObj.stringValue {
+                <span style="color:#75715e">// se è un url valido allora vai alla prossima classe</span>
+                <span style="color:#66d9ef">if</span> isValidUrl(urlString: urlString) {
+                    <span style="color:#66d9ef">let</span> webController = WebViewController()
+                    webController.urlString = urlString
+                    <span style="color:#66d9ef">self</span>.navigationController?.pushViewController(WebViewController(), animated: <span style="color:#66d9ef">true</span>)
+                } <span style="color:#66d9ef">else</span> {
+                    <span style="color:#66d9ef">let</span> alert = UIAlertController(title: <span style="color:#e6db74">&#34;Attenzione!&#34;</span>, message: <span style="color:#e6db74">&#34;url non valido&#34;</span>, preferredStyle: .alert)
+                    <span style="color:#66d9ef">let</span> alertAction = UIAlertAction(title: <span style="color:#e6db74">&#34;ok&#34;</span>, style: .<span style="color:#66d9ef">default</span>, handler: <span style="color:#66d9ef">nil</span>)
+                    alert.addAction(alertAction)
+                    alert.show(<span style="color:#66d9ef">self</span>, sender: <span style="color:#66d9ef">nil</span>)
+                }
+            }
+        }
+    }
+
+    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidUrl</span> (urlString: String?) -&gt; Bool {
+        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> urlString = urlString {
+            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> url = NSURL(string: urlString) {
+                <span style="color:#66d9ef">return</span> UIApplication.shared.canOpenURL(url <span style="color:#66d9ef">as</span> URL)
+            }
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+    }</code></pre></div>
+<p>Implementiamo dunque il protocollo <strong>AVCaptureMetadataOutputObjectsDelegate</strong> e lo facciamo implementando la funzione <strong>captureOutput()</strong>.
+All&rsquo;interno di questa funzione ci assicuriamo che l&rsquo;array di metadati non sia nullo e abbia almeno un elemento al suo interno, altrimenti non andiamo oltre.
+Prendiamo poi il primo elemento dell&rsquo;array e facciamo il cast ad un <strong>AVMetadataMachineReadableCodeObject</strong> per controllare che esso sia effettivamente un QR code. In caso positivo, lo sfruttiamo per mostrare un rettangolo che indica che il QR code è stato letto con successo, e procediamo a mostrare l&rsquo;url in una WebView.</p>
+<h3 id="apertura-url">Apertura Url</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">WebKit</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebViewController</span>: UIViewController, WKUIDelegate {
+
+    <span style="color:#66d9ef">var</span> urlString = <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#66d9ef">var</span> webView: WKWebView!
+    
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadView</span>() {
+        <span style="color:#66d9ef">let</span> webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = <span style="color:#66d9ef">self</span>
+        view = webView
+    }
+    
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+        <span style="color:#66d9ef">super</span>.viewDidLoad()
+        <span style="color:#66d9ef">let</span> myURL = URL(string: urlString)
+        <span style="color:#66d9ef">let</span> request = URLRequest(url: myURL!)
+        webView.load(request)
+    }
+}</code></pre></div>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-10-qrcode-ios%2f&amp;text=Leggere%20i%20QR%20Code%20con%20Swift&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-10-qrcode-ios%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-10-qrcode-ios%2f&amp;title=Leggere%20i%20QR%20Code%20con%20Swift" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-10-qrcode-ios%2f&amp;title=Leggere%20i%20QR%20Code%20con%20Swift" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-10-qrcode-ios%2f&amp;title=Leggere%20i%20QR%20Code%20con%20Swift" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-08-10-qrcode-ios%2f&amp;description=Leggere%20i%20QR%20Code%20con%20Swift" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://example.org/it/post/2017-08-03-qrcode-android/" data-toggle="tooltip" data-placement="top" title="Leggere i QR Code in Android">&larr; Articolo precedente</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://example.org/it/post/2017-08-17-guida-intent-android/" data-toggle="tooltip" data-placement="top" title="Passare da un Activity all&#39;altra con gli Intent">Articolo successivo &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Sviluppato con Hugo v0.72.0</a> &nbsp;&bull;&nbsp; Tema <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adattato da <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="http://example.org/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://example.org/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

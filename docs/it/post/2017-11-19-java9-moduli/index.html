@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="it" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Modularità in java 9 - Umberto D&#39;Ovidio</title>
+  <meta name="description" content="Java 9 permette di modularizzare i propri progetti in modo mai visto prima. Scopriamo come"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Umberto D\u0027Ovidio",
+    
+    "url": "http:\/\/example.org\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/example.org\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/example.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/example.org\/it\/post\/2017-11-19-java9-moduli\/",
+          "name": "Modularità in java 9"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Umberto D\u0027Ovidio"
+  },
+  "headline": "Modularità in java 9",
+  "description" : "Java 9 permette di modularizzare i propri progetti in modo mai visto prima. Scopriamo come",
+  "inLanguage" : "it",
+  "wordCount":  798 ,
+  "datePublished" : "2017-11-19T00:00:00",
+  "dateModified" : "2017-11-19T00:00:00",
+  "image" : "http:\/\/example.org\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/example.org\/it\/post\/2017-11-19-java9-moduli\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/example.org\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/example.org\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Modularità in java 9" />
+<meta property="og:description" content="Java 9 permette di modularizzare i propri progetti in modo mai visto prima. Scopriamo come">
+<meta property="og:url" content="http://example.org/it/post/2017-11-19-java9-moduli/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Umberto D&#39;Ovidio" />
+
+  <meta name="twitter:title" content="Modularità in java 9" />
+  <meta name="twitter:description" content="Java 9 permette di modularizzare i propri progetti in modo mai visto prima. Scopriamo come">
+  <meta name="twitter:card" content="summary" />
+  <link href='http://example.org/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.72.0" />
+  <link rel="alternate" href="http://example.org/it/index.xml" type="application/rss+xml" title="Umberto D&#39;Ovidio"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="http://example.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://example.org/css/syntax.css" /><link rel="stylesheet" href="http://example.org/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Attiva/disattiva la navigazione</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/it/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Now" href="/it/page/now/">Now</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/it/tags">Tags</a>
+            </li>
+          
+        
+
+        
+          
+            <li>
+              
+                
+                  <a href="/en" lang="en">en</a>
+                
+              
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Modularità in java 9</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Redatto il November 19, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minuti
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;798&nbsp;parole
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Umberto D'Ovidio
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Una delle introduzioni più interessanti nella nuova versione di Java è senza dubbio quella dei moduli. I moduli permettono di descrivere le relazioni e le dipendenze all&rsquo;interno del codice della tua applicazione.</p>
+<p>Il vantaggio principale è una migliore organizzazione di progetti complessi e la creazione di un runtime Java che contiene solo le Api richieste dalla tua applicazione. Questa &ldquo;cura dimagrante&rdquo; aiuta tutti gli sviluppatori che scrivono codice per ambienti con risorse limitate, ad esempio per sensori smart.</p>
+<h3 id="introduzione-ai-moduli">Introduzione ai moduli</h3>
+<p>Essenzialmente un modulo è un raggruppamento di packages e risorse che possono essere richiamate con il nome del modulo.
+La <em>module declaration</em> (dichiarazione del modulo) specifica il nome del modulo e la relazione che con gli altri moduli. Essa è contenuta in un file chiamato <strong>module-info.java</strong>. Questo file viene poi compilato in un file <em>class</em> e viene chiamato come il <em>module descriptor</em> (descrittore del modulo).
+La descrizione del modulo inizia con la keyword <strong>module</strong>.</p>
+<h3 id="un-esempio-di-modulo">Un esempio di modulo</h3>
+<p>Fondamentalmente, un modulo può fare due cose:</p>
+<ul>
+<li>specificare una relazione di dipendenza da altri moduli attraverso la keyword <strong>requires</strong></li>
+<li>specificare quali <strong>packages</strong> rende disponibili agli altri moduli attraverso la keyword <strong>exports</strong></li>
+</ul>
+<p>Per rendere chiaro il funzionamento dei moduli svilupperemo insieme una semplice applicazione che se ne serve. Il codice sorgente è disponibile su <a href="https://github.com/Cyborg101/dovidioTutorials/tree/master/Modulo">Github</a>
+Per prima cosa creiamo una cartella del progetto, che chiameremo <strong>Modulo</strong>.
+All&rsquo;interno di questa cartella creiamo un&rsquo;altra cartella chiamata <strong>src</strong>, che conterrà tutto il codice sorgente della nostra applicazione.
+Entriamo in <em>src</em> e creiamo due cartelle: <strong>modulopricipale</strong> e <strong>utils</strong>. Entriamo all&rsquo;interno della prima cartella e creiamo un&rsquo;altra cartella chiamata <strong>moduloprincipale</strong>. All&rsquo;interno di questa cartella creiamo un&rsquo;altra cartella che chiameremo <strong>appesempio</strong>.
+Ora entriamo nella cartella <strong>utils</strong>, creiamo una cartella <strong>utils</strong> al suo interno e all&rsquo;interno di quest&rsquo;ultima creiamo una cartella <strong>stringutils</strong>.
+Alla fine di questa fase il tuo albero di cartelle dovrebbe essere uguale all&rsquo;immagine mostrata sotto.</p>
+<!-- raw HTML omitted -->
+<p>L&rsquo;applicazione avrà un semplice modulo principale che utilizzerà un altro modulo dove sono specificate alcune funzioni di utilità per le stringhe.
+Entriamo dunque nella cartella utils/utils/stringutils e creiamo una classe chiamata <strong>StringFormatter.java</strong>.
+Il codice della classe è il seguente</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> utils.stringutils<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringFormatter</span> <span style="color:#f92672">{</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">capitalize</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>Character<span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)));</span>
+		<span style="color:#f92672">}</span> 
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> Character<span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">))</span> <span style="color:#f92672">+</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>	
+		<span style="color:#f92672">}</span> 
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		StringBuilder sb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">:</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+			sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>Character<span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">(</span>c<span style="color:#f92672">));</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> sb<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>La classe fornisce due semplici metodi. Il primo permette di rendere maiuscola la prima lettera di una parola. Ad esempio, chiamando <em>capitalize(&ldquo;umberto&rdquo;)</em>
+ci verrà ritornata la stringa &ldquo;Umberto&rdquo;. La seconda classe invece trasforma una parola in maiuscolo, quindi chiamando <em>toUpperCase(&ldquo;umberto&rdquo;)</em> ci verrà restituita la stringa &ldquo;UMBERTO&rdquo;.</p>
+<p>Ora che abbiamo creato queste utili funzioni, è ora di utilizzarle. Creiamo quindi una classe chiamata <strong>Main.java</strong> nella cartella src/moduloprincipale/moduloprincipale/appesempio.</p>
+<p>Il codice della classe è il seguente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 
+<span style="color:#f92672">package</span> moduloprincipale.appesempio<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> utils.stringutils.StringFormatter<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Siamo nella classe principale&#34;</span><span style="color:#f92672">);</span>
+
+		String umberto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;umberto&#34;</span><span style="color:#f92672">;</span>
+
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;capitalizziamo la stringa &#34;</span> <span style="color:#f92672">+</span> umberto <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> StringFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">capitalize</span><span style="color:#f92672">(</span>umberto<span style="color:#f92672">));</span>
+
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Ora invece rendiamola maiuscola: &#34;</span> <span style="color:#f92672">+</span> StringFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">(</span>umberto<span style="color:#f92672">));</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Creiamo ora i file <strong>module-info.java</strong>, ovvero i file che specificano la relazione tra i moduli.
+Entriamo nella cartella src/utils e creiamo il file module-info.java.
+Il codice del file sarà il seguente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">module utils <span style="color:#f92672">{</span>
+	exports utils<span style="color:#f92672">.</span><span style="color:#a6e22e">stringutils</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>La descrizione del nostro modulo informa Java che vogliamo che il package utils.stringutils venga reso disponibile a tutti i moduli. Se vogliamo renderlo disponibile solo ad un modulo particolare possiamo specificare il nome del modulo dopo la parola chiave <strong>to</strong>. Ad esempio, se vogliamo che il nostro package sia disponibile solo per il <em>moduloprincipale</em>, scriveremo così:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">module utils <span style="color:#f92672">{</span>
+	exports utils<span style="color:#f92672">.</span><span style="color:#a6e22e">stringutils</span> to moduloprincipale<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Creiamo ora il file module-info.java all&rsquo;interno della cartella src/moduloprincipale e scriviamo il seguente codice.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 
+module moduloprincipale <span style="color:#f92672">{</span>
+	requires utils<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Questo significa che il nostro modulo richiede il pacchetto utils, e potremmo servircene all&rsquo;interno della nostra classe.</p>
+<p>Per compilare tutto possiamo utilizzare il vecchio ma pur sempre abile <strong>javac</strong>, che si è aggiornato per l&rsquo;occasione con delle nuove opzioni.
+Andiamo nella directory principale, ovvero <strong>Modulo</strong>, e compiliamo tutto con il seguente comando</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">javac -d moduli --module-source-path src src/moduloprincipale/moduloprincipale/appesempio/Main.java </code></pre></div>
+Questo comando dice di compilare tuttte le classi all&rsquo;interno di una directory chiamata moduli. L&rsquo;opzione <strong>&ndash;module-source-path</strong> compila automaticamente i file nell&rsquo;albero sotto la cartella specificata, in questo caso src.
+Per eseguire la nostra applicazione utilizziamo il seguente comando</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">java --module-path appmodules -m moduloprincipale/moduloprincipale.appesempio.Main</code></pre></div>
+<p>Il risultato è il seguente:</p>
+<!-- raw HTML omitted -->
+<p>La modularità e senz&rsquo;altro una caratteristica importante di Java 9 e l&rsquo;argomento è molto vasto. Se vuoi saperne di più, ecco qualche libro utile:</p>
+<ul>
+<li><!-- raw HTML omitted -->Java 9 Modularity: Patterns and Practices for Developing Maintainable Applications<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->Java: The Complete Reference<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->Java 9 for Programmers (Deitel Developer Series)<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+</ul>
+<p>Video su java 9 e i moduli:</p>
+<!-- raw HTML omitted -->
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-11-19-java9-moduli%2f&amp;text=Modularit%c3%a0%20in%20java%209&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-11-19-java9-moduli%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-11-19-java9-moduli%2f&amp;title=Modularit%c3%a0%20in%20java%209" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-11-19-java9-moduli%2f&amp;title=Modularit%c3%a0%20in%20java%209" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-11-19-java9-moduli%2f&amp;title=Modularit%c3%a0%20in%20java%209" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-11-19-java9-moduli%2f&amp;description=Modularit%c3%a0%20in%20java%209" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://example.org/it/post/2017-09-30-gestire-sqlite-android/" data-toggle="tooltip" data-placement="top" title="Come gestire SQLite su Android senza diventare pazzo">&larr; Articolo precedente</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://example.org/it/post/2018-09-24-unit-testing-android-/" data-toggle="tooltip" data-placement="top" title="Testing su Android Parte 1 - JUnit e Unit Testing">Articolo successivo &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Sviluppato con Hugo v0.72.0</a> &nbsp;&bull;&nbsp; Tema <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adattato da <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="http://example.org/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://example.org/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

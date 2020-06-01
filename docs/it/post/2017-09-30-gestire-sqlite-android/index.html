@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="it" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Come gestire SQLite su Android senza diventare pazzo - Umberto D&#39;Ovidio</title>
+  <meta name="description" content="Ecco la migliore pratiche che ho scoperto sulla gestione di sqlite in Android."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Umberto D\u0027Ovidio",
+    
+    "url": "http:\/\/example.org\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/example.org\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/example.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/example.org\/it\/post\/2017-09-30-gestire-sqlite-android\/",
+          "name": "Come gestire s q lite su android senza diventare pazzo"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Umberto D\u0027Ovidio"
+  },
+  "headline": "Come gestire SQLite su Android senza diventare pazzo",
+  "description" : "Ecco la migliore pratiche che ho scoperto sulla gestione di sqlite in Android.",
+  "inLanguage" : "it",
+  "wordCount":  1223 ,
+  "datePublished" : "2017-09-30T00:00:00",
+  "dateModified" : "2017-09-30T00:00:00",
+  "image" : "http:\/\/example.org\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/example.org\/it\/post\/2017-09-30-gestire-sqlite-android\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/example.org\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/example.org\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Come gestire SQLite su Android senza diventare pazzo" />
+<meta property="og:description" content="Ecco la migliore pratiche che ho scoperto sulla gestione di sqlite in Android.">
+<meta property="og:image" content="http://example.org/images/sqlite_promo_og.png" />
+<meta property="og:url" content="http://example.org/it/post/2017-09-30-gestire-sqlite-android/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Umberto D&#39;Ovidio" />
+
+  <meta name="twitter:title" content="Come gestire SQLite su Android senza diventare pazzo" />
+  <meta name="twitter:description" content="Ecco la migliore pratiche che ho scoperto sulla gestione di sqlite in Android.">
+  <meta name="twitter:image" content="http://example.org/images/sqlite_promo_og.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='http://example.org/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.72.0" />
+  <link rel="alternate" href="http://example.org/it/index.xml" type="application/rss+xml" title="Umberto D&#39;Ovidio"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="http://example.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://example.org/css/syntax.css" /><link rel="stylesheet" href="http://example.org/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Attiva/disattiva la navigazione</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/it/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Now" href="/it/page/now/">Now</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/it/tags">Tags</a>
+            </li>
+          
+        
+
+        
+          
+            <li>
+              
+                
+                  <a href="/en" lang="en">en</a>
+                
+              
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Come gestire SQLite su Android senza diventare pazzo</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Redatto il September 30, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minuti
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1223&nbsp;parole
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Umberto D'Ovidio
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Se vuoi salvare dati nella tua app Android, quasi sicuramente utilizzerai il database SQLite. Purtroppo però la documentazione ufficiale su come gestirlo lascia molto a desiderare. In questo post scopriremo alcune tecniche che possono sembrare controintuitive, ma ti risparmieranno un sacco di grattacapi.</p>
+<p>Recentemente mi sono trovato a sviluppare un&rsquo;app Android piuttosto complessa che richiede la sincronizzazione con un server. I dati dell&rsquo;app vengono infatti salvate in un database remoto, in modo che quando l&rsquo;utente rientra con il suo account può sempre ritrovare i dati aggiornati indipendentemente dal dispositivo utilizzato. Quando il dispositivo è connesso a internet non c&rsquo;è bisogno di particolari accorgimenti in quanto tutti i dati che vengono prodotti localmente vengono mandati al server quasi in contemporanea. Ma cosa succede se l&rsquo;utente è offline?</p>
+<p>In questo caso l&rsquo;app registra le azioni effettuate dall&rsquo;utente all&rsquo;interno di un database SQLite locale, e quando torna online effettua delle operazioni di sincronizzazione con il database remoto. Per rendere l&rsquo;esperienza d&rsquo;uso più fluida possibile ho deciso di permettere all&rsquo;utente di continuare ad utilizzare l&rsquo;app normalmente mentre le operazioni di sincronizzazione vengono effettuate in un altro thread. E&rsquo; qui che ho iniziato a scontrarmi con alcuni problemi di SQLite.</p>
+<p>Android offre diverse classi che permettono di interagire con SQLite in maniera semplice. Fra queste abbiamo <a href="https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html">SQLiteOpenHelper</a>, una classe che aiuta nel processo di creazione del database e nella gestione delle versioni.
+Per creare un database SQLite, la documentazione ufficiale suggerisce di estendere questa classe ed eseguire il codice di creazione del database all&rsquo;interno del metodo <a href="https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html#onCreate(android.database.sqlite.SQLiteDatabase)">onCreate(SQLiteDatabase db)</a>.
+Facciamo un esempio pratico di seguito:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DatabaseHelper</span> <span style="color:#66d9ef">extends</span> SQLiteOpenHelper <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DatabaseHelper</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>context<span style="color:#f92672">.</span><span style="color:#a6e22e">getApplicationContext</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;db&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>SQLiteDatabase sqLiteDatabase<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        sqLiteDatabase<span style="color:#f92672">.</span><span style="color:#a6e22e">execSQL</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;CREATE TABLE TODO (ID INTEGER PRIMARY KEY, NAME TEXT NOT NULL)&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>In questo esempio abbiamo creato un database con una tabella chiamata TODO (che in inglese sta per &ldquo;cose da fare&rdquo;) e abbiamo creato due colonne, una per l&rsquo;id e una per il nome.
+Il database viene creato la prima volta che istanziamo la classe DatabaseHelper. Non solo, la classe DatabaseHelper ci ritorna degli oggetti SQLiteDatabase attraverso i suoi metodi <a href="https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html#getReadableDatabase()">getReadableDatabase()</a> e <a href="https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html#getWritableDatabase()">getWritableDatabase()</a> attraverso il quale possiamo svolgere operazioni di lettura e scrittura sul database.
+Questi oggetti possono essere chiusi una volta effettuata l&rsquo;operazione di scrittura/lettura tramite il metodo <strong>close()</strong>.</p>
+<p>Secondo la documentazione ufficiale, una volta ottenuta una connessione al database, questa connessione può rimanere aperta fin tanto che la tua app ne abbia bisogno, e viene suggerito di chiuderla nel metodo <strong>onDestroy()</strong>.</p>
+<p>Nel mio caso ogni <strong>Activity</strong> che aveva bisogno di accedere al database aveva una sua istanza dell&rsquo;oggetto <strong>DatabaseHelper</strong>, che veniva chiuso nel metodo <strong>onDestroy()</strong>.
+Tutto funzionava a meraviglia finchè non ho inserito il codice di sincronizzazione all&rsquo;interno di un altro Thread. Infatti dopo aver implementato la sincronizzazione ho iniziato a riscontrare alcuni crash fastidiosi e piuttosto imprevedibili.</p>
+<p>L&rsquo;app crashava infatti con un errore di questo tipo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">android.database.sqlite.SQLiteDatabaseLockedException: database is locked <span style="color:#f92672">(</span>code 5<span style="color:#f92672">)</span>: , <span style="color:#66d9ef">while</span> compiling: PRAGMA journal_mode</code></pre></div>
+<p>Dopo un pò di ricerca e debugging ho scoperto la cause del problema. Nel codice di sincronizzazione, ad un certo punto, venivano inserite alcune azioni utilizzando una transazione. Durante questa fase della sincronizzazione una delle mie Activity cercava di accedere al database per leggere alcuni dati e fare un refresh dell&rsquo;interfaccia grafica. Il database era però già occupato e dunque veniva restituito questo errore.</p>
+<p>A questo punto ho iniziato un&rsquo;estenuante ricerca Google, dove ho letto tutto ed il contrario di tutto sull&rsquo;argomento. Fortunatamente ad un certo punto ho trovato questo <a href="https://stackoverflow.com/questions/2493331/what-are-the-best-practices-for-sqlite-on-android#answer-3689883">post</a> su Stack Overflow. In breve viene spiegato che ogni oggetto del tipo <strong>SQLiteOpenHelper</strong> ha una singola connessione al database, e che le operazioni effettuate sul database tramite questo oggetto vengono serializzate. Se però vengono create più connessioni e due di queste cercano di scrivere nel database contemporaneamente, una di queste fallisce. Come fare dunque? Semplice, basta essere sicuri che ci sia una sola connessione ogni volta.
+Per far utilizziamo il <a href="https://it.wikipedia.org/wiki/Singleton">Singleton Pattern</a> e accediamo alla nostra singola connessione attraverso un metodo synchronized. Il codice di prima diventa così:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DatabaseHelper</span> <span style="color:#66d9ef">extends</span> SQLiteOpenHelper <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> DatabaseHelper db<span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">// il costruttore è privato così siamo sicuri che nessuno possa creare più di una connessione
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">DatabaseHelper</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>context<span style="color:#f92672">.</span><span style="color:#a6e22e">getApplicationContext</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;db&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">synchronized</span> DatabaseHelper <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>db <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            db <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DatabaseHelper<span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> db<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>SQLiteDatabase sqLiteDatabase<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        sqLiteDatabase<span style="color:#f92672">.</span><span style="color:#a6e22e">execSQL</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;CREATE TABLE TODO (ID INTEGER PRIMARY KEY, NAME TEXT NOT NULL)&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onUpgrade</span><span style="color:#f92672">(</span>SQLiteDatabase sqLiteDatabase<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Ogni volta che hai bisogno di un oggetto <strong>DatabaseHelper</strong> basterà dunque richiamarlo nel seguente modo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">DatabaseHelper databaseHelper <span style="color:#f92672">=</span> DatabaseHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span></code></pre></div>
+<p>Una volta implementato questo cambiamento, ho però iniziato a riscontrare un altro tipo di eccezione:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">IllegalStateException</span><span style="color:#f92672">:</span> Cannot perform <span style="color:#66d9ef">this</span> operation because the connection pool has been closed<span style="color:#f92672">.</span></code></pre></div></p>
+<p>Il problema è che tutto il mio codice che effettuava operazioni su database era strutturato nel seguente modo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">SQLiteDatabase writeDatabase <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+    writeDatabase <span style="color:#f92672">=</span> databaseHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">getWritabaleDatabase</span><span style="color:#f92672">();</span>
+
+    <span style="color:#75715e">// fai qualche operazione sul database
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLiteException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// cattura l&#39;eccezione e facci qualcosa
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>writeDatabase <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> writeDatabase<span style="color:#f92672">.</span><span style="color:#a6e22e">isOpen</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+        writeDatabase<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Poteva dunque succedere che nel codice di sincronizzazione avevo chiuso l&rsquo;ultima connessione al database, mentre nel codice all&rsquo;interno delle mie activity stavo cercando di effettuare una query. Ho quindi deciso di fare un drastico cambio al codice eliminando tutte gli statement del tipo <strong>writeDatabase.close()</strong>.</p>
+<p><em>&ldquo;Aspetta, mi stai dicendo che non chiudi mai la connessione al database?&quot;</em></p>
+<p>Si, è così. Nel caso in cui accedi al database dallo sempre dallo stesso thread invece non dovresti avere questi problemi.</p>
+<p><em>&ldquo;Ma non si rischiano memory leaks tenendo delle connessioni aperte?&quot;</em></p>
+<p>No, perchè la connessione che rimane aperta è solo una. L&rsquo;importante è chiudere sempre gli oggetti del tipo Cursor. Vedi <a href="https://stackoverflow.com/questions/7211941/never-close-android-sqlite-connection">questa domanda su Stack Overflow</a></p>
+<p><em>&ldquo;E per quanto riguarde l&rsquo;errore &ldquo;Leak found &hellip;&rdquo; che vedo spesso su LogCat?&quot;</em></p>
+<p>Quell&rsquo;errore appare quando apri un database senza chiuderlo ed in seguito ne apri un altro.</p>
+<p>Per avere una prova empirica che tutto quello che ho detto funziona, ho creato una <a href="https://github.com/Cyborg101/dovidioTutorials/tree/master/DatabaseLocking">piccola app</a>. L&rsquo;app in questione ha 4 bottoni. Quando viene premuto uno di questi bottoni, vengono creati e mandati in esecuzione 10 thread diversi. Ciascuno di questi thread aggiunge 10 record nel database.
+Ci sono 4 pulsanti e ognuno di questi fa cose diverse. Le possibilità sono:</p>
+<ol>
+<li>Viene utilizzato un singolo databaseHelper comune a tutti i thread e vengono chiuse le connessioni al termine della scrittura.</li>
+<li>Vengono utilizzati diversi databaseHelper, uno per thread, e vengono chiuse le connessioni al termine della scrittura.</li>
+<li>Viene utilizzato un singolo databaseHelper comune a tutti i thread e non vengono chiuse le connessioni al termine della scrittura.</li>
+<li>Vengono utilizzati diversi databaseHelper, uno per thread, e non vengono chiuse le connessioni al termine della scrittura.</li>
+</ol>
+<p>Provando e riprovando l&rsquo;app ho notato che l&rsquo;unico pulsante che non porta al crash dell&rsquo;app è quello che utilizza un solo databaseHelper e non chiude le connessioni.
+I pulsanti del tipo 2 e 4 infatti riportano un errore di database lock. Il pulsante 1 invece è particolare. Sul mio dispositivo fisico (Samsung s5 mini) fa terminare l&rsquo;app senza loggare nessun errore. Sull&rsquo;emulatore invece viene riportato un errore di database lock.</p>
+<p>Spero di esserti stato d&rsquo;aiuto con questo post, se hai qualche osservazione o precisazione non esitare a lasciare un commento.</p>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-09-30-gestire-sqlite-android%2f&amp;text=Come%20gestire%20SQLite%20su%20Android%20senza%20diventare%20pazzo&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-09-30-gestire-sqlite-android%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-09-30-gestire-sqlite-android%2f&amp;title=Come%20gestire%20SQLite%20su%20Android%20senza%20diventare%20pazzo" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-09-30-gestire-sqlite-android%2f&amp;title=Come%20gestire%20SQLite%20su%20Android%20senza%20diventare%20pazzo" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-09-30-gestire-sqlite-android%2f&amp;title=Come%20gestire%20SQLite%20su%20Android%20senza%20diventare%20pazzo" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2fexample.org%2fit%2fpost%2f2017-09-30-gestire-sqlite-android%2f&amp;description=Come%20gestire%20SQLite%20su%20Android%20senza%20diventare%20pazzo" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://example.org/it/post/2017-09-19-multitimer-android/" data-toggle="tooltip" data-placement="top" title="Gestisci multipli timer con MultiTimer">&larr; Articolo precedente</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://example.org/it/post/2017-11-19-java9-moduli/" data-toggle="tooltip" data-placement="top" title="Modularità in java 9">Articolo successivo &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/it/">Umberto D&#39;Ovidio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Sviluppato con Hugo v0.72.0</a> &nbsp;&bull;&nbsp; Tema <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adattato da <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="http://example.org/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://example.org/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

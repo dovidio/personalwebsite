@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/it/page/now/</loc>
+    <lastmod>2020-05-24T23:20:15+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/page/now/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="http://example.org/it/page/now/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/page/</loc>
+    <lastmod>2020-05-24T23:20:15+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="http://example.org/it/page/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/</loc>
+    <lastmod>2020-05-24T23:20:15+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="http://example.org/it/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/</loc>
+    <lastmod>2018-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/tags/</loc>
+    <lastmod>2018-09-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="http://example.org/it/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/tags/testing/</loc>
+    <lastmod>2018-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2018-09-24-unit-testing-android-/</loc>
+    <lastmod>2018-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-11-19-java9-moduli/</loc>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-09-30-gestire-sqlite-android/</loc>
+    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-09-19-multitimer-android/</loc>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-08-24-volley-android/</loc>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-08-17-guida-intent-android/</loc>
+    <lastmod>2017-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-08-10-qrcode-ios/</loc>
+    <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-08-03-qrcode-android/</loc>
+    <lastmod>2017-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2017-07-30-gson-parsing/</loc>
+    <lastmod>2017-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-11-07-stack-in-c/</loc>
+    <lastmod>2016-11-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-09-17-generatori-siti-statici/</loc>
+    <lastmod>2016-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-09-16-italianizzare-date-jekyll/</loc>
+    <lastmod>2016-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-09-14-esperimento-libet-html5/</loc>
+    <lastmod>2016-09-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-09-13-struttura-cartelle-jekyll/</loc>
+    <lastmod>2016-09-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-09-12-twitter-cards-and-jekyll/</loc>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-08-19-jekyll-github-pages/</loc>
+    <lastmod>2016-08-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-08-15-jekyll/</loc>
+    <lastmod>2016-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-07-27-launcher-icon/</loc>
+    <lastmod>2016-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-07-20-butterknife/</loc>
+    <lastmod>2016-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-07-13-i-migliori-siti-per-imparare/</loc>
+    <lastmod>2016-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-07-03-nostalgia-per-casa-vianello/</loc>
+    <lastmod>2016-07-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-06-29-sono-passato-a-mac/</loc>
+    <lastmod>2016-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-06-22-come-utilizzare-il-date-picker/</loc>
+    <lastmod>2016-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2016-01-15-unity-solarized/</loc>
+    <lastmod>2016-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/post/2015-10-10-come-creare-una-chiavetta-di-installazione-ubuntu/</loc>
+    <lastmod>2015-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/it/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="http://example.org/it/categories/"
+                />
+  </url>
+  
+</urlset>
