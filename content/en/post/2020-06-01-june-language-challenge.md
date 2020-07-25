@@ -6,8 +6,8 @@ tags: ["languagelearning"]
 ---
 
 I've been struggling with learning german for a couple of years.
-I've tried multiple techniques and content types: apps, structured language courses, informal tutoring on [italki](https://www.italki.com/),
-and yet I'm still far from fluency. Recently I've discovered [lingvist](https://lingvist.com), an app that claims to use the
+I've tried multiple techniques and content types: apps, structured language courses, informal tutoring on [Italki](https://www.italki.com/),
+and yet I'm still far from fluency. Recently I've discovered [Lingvist](https://lingvist.com), an app that claims to use the
 best findings in cognitive research to improve learning retention.
 It's basically some sort of glorified [Anki](https://apps.ankiweb.net/), targeted
 specifically to language learning.
