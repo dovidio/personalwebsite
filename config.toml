@@ -20,9 +20,13 @@ defaultContentLanguage = "en"
 
 [languages]
   [languages.en]
-    contentDir = "content/en" # English   
+    contentDir = "content/en" # English
+    flagName = "gb" 
+    LanguageName = "English"
   [languages.it] 
     contentDir = "content/it" # Italian
+    flagName = "it"
+    LanguageName = "Italiano"
 
 [[menu.main]]
     name = "Blog"
