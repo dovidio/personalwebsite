@@ -6,13 +6,18 @@ subtitle: What am I doing now?
 ---
 
 ## Work
-I'm lucky to contribute to the [Kubernetes monitoring dashboard]((https://www.dynatrace.com/technologies/kubernetes-monitoring/)) along with some amazing colleagues at Dynatrace. I'm working mostly with Java and Angular.
+I'm working for [Paysafe](https://www.paysafe.com/), a company focusing on online payments.
+Most of my work involves Java, Javascript, and SQL.
 
 ## Free time
-Summer is here, and with it also extreme trekking, bike trips and desperate german learning sessions.
+I spend my free time running, reading, and refreshing [this page](https://coronavirus.jhu.edu/map.html) quite often.
 
 ## Music
-I have rediscovered this masterpiece: [Devin Townsend - Ziltoid the Omniscient](https://open.spotify.com/album/6YjSKoG1zWPa3Ooa2tmkpy?si=qnSyCG8ET2yh0lqiOfcQ2A).
+Here's a couple of songs that I'm listening on repeat [Subsonica - Di Domenica](https://open.spotify.com/track/1GNVQ89D3nbDLagaWlU6d1?si=eHidPRtSQLO7PxX6eokJyQ),
+[NTO - Trauma](https://open.spotify.com/track/4jTlhnW8wp7ANU36iRgbQK?si=D0drD7kqQwGRrG09CvmIDg),
+[Rupert Holmes - Escape](https://open.spotify.com/track/5I9zIwGB6f0edpjO5oX2b9?si=WB5v3fBCQGuOnDmER-rVSw).
 
 ## Books
-I have just finished [**Kubernetes Up and Running**](https://www.amazon.com/Kubernetes-Running-Dive-Future-Infrastructure/dp/1492046531/ref=dp_ob_title_bk). Next one is going to be [**Hands-On Software Engineering with Golang**](https://www.amazon.com/Hands-Software-Engineering-Golang-programming-dp-1838554491/dp/1838554491/ref=mt_paperback?_encoding=UTF8&me=&qid=/).
+Last book I've read (actually listened to) is [Can't Hurt Me: Master Your Mind and Defy the Odds](https://www.amazon.com/Cant-Hurt-Me-David-Goggins-audiobook/dp/B07KKP62FW), probably
+the best audiobook you can listen to while running.
+I am currently reading [Why we sleep: Unlocking the Power of Sleep](https://www.amazon.com/Why-We-Sleep-Unlocking-Dreams/dp/1501144316) and [Extreme Ownership: How U.S. Navy SEALs Lead and Win](https://www.amazon.com/Extreme-Ownership-U-S-Navy-SEALs-ebook/dp/B00VE4Y0Z2).
