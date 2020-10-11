@@ -31,7 +31,7 @@
     {{ if .Params.tags }}
     <div class="blog-tags">
         {{ range .Params.tags }}
-        <a href="{{"tags" | absLangURL}}/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+        <a href="{{"tags" | absLangURL}}/{{ . | urlize }}/">{{ . }}</a>
         {{ end }}
     </div>
     {{ end }}
