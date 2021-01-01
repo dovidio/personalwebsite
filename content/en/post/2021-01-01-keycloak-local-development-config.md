@@ -2,6 +2,7 @@
 title: "Keycloak Local Development Config"
 date: 2021-01-01T18:42:16+01:00
 draft: false
+tags: ["docker-compose", "postgres", "keycloak"]
 ---
 
 Recently I found myself setting up a local development environment where Keycloak is used.
