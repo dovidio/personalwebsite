@@ -10,7 +10,7 @@ You want to run Postgres inside a Docker container for development? Read here
 Chances are that you will run it alongside other applications that will access it.
 The best tool you can use for local development is docker-compose
 Here's my configuration
-```
+```yaml
 version: "3.8"
 services:
   db:
@@ -29,14 +29,14 @@ Nothing too fancy, but there are a couple of things that are good to keep in min
 1. You can use volumes to avoid loosing data. Here I'm binding the db directory of my drive to the postgresql/data container directory. Moreover I'm binding an **init.sql** file that resides in the
 same directory of the docker-compose file to *docker-entrypoint-initdb.d/init.sql*. Inside this script
 I do the initial user and db creation. The file is called by postgres when starting up.
-```
+```sql
 create user if not exists docker;
 create database if not exists app;
 grant all privileges on database app to docker;
 ```
 2. The password is provided as an environment variable. When launching the docker-compose script, you
 can specify to use an env file to create environment variables for the container. E.g.
-```
+```bash
 docker-compose --env-file .env.dev --project-name quarkus-boilerplate up -d
 ```
 In this way you can have multiple environment files for different environments.
