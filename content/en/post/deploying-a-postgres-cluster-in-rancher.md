@@ -14,7 +14,7 @@ tags:
 ---
 Deploying a Postgres cluster on Kubernetes has become quite easy thanks to the [Postgres Operator](https://github.com/zalando/postgres-operator). Let's see how this can be done with a rancher cluster.
 
-<!-- more -->
+<!--more-->
 
 Essentially, it's sufficient to follow the [quickstart tutorial](https://github.com/zalando/postgres-operator/blob/master/docs/quickstart.md). There is only a caveat. I am running a bare metal K3s cluster. By default, the operator will try to create a `PersistentVolumeClaim` with the default storage class of the Cluster. Problem is, my cluster didn't have a default storage class. The `PersistentVolumeClaim` fails, and looking at the events it becomes clear what's the problem: `FailedBinding: no persistent volumes available for this claim and no storage class is set`.
 
