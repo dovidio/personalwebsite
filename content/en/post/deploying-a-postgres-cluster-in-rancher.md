@@ -37,5 +37,4 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 kubectl apply -k github.com/zalando/postgres-operator/manifests
 # deploy a minimal cluster
 kubectl create -f manifests/minimal-postgres-manifest.yaml
-
 ```
