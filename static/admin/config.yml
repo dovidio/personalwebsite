@@ -19,6 +19,7 @@ collections:
       - { label: "Date", name: "date", widget: "date" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "image", widget: "image"}
+      - { label: "Tags", name: "tags", widget: "list"}
   - name: "english"
     label: "english"
     folder: "content/en/post"
@@ -28,3 +29,4 @@ collections:
       - { label: "Date", name: "date", widget: "date" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "image", widget: "image"}
+      - { label: "Tags", name: "tags", widget: "list"}
