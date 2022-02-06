@@ -10,8 +10,8 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "Italian blog"
-    label: "Italian Blog"
+  - name: "italian"
+    label: "italian"
     folder: "content/it/post"
     create: true
     fields:
@@ -20,8 +20,8 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "image", widget: "image"}
       - { label: "Description", name: "description", widget: "string"}
-  - name: "English blog"
-    label: "English Blog"
+  - name: "english"
+    label: "english"
     folder: "content/en/post"
     create: true
     fields:
