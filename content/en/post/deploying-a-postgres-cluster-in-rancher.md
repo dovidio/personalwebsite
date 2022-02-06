@@ -16,7 +16,7 @@ Deploying a Postgres cluster on Kubernetes has become quite easy thanks to the [
 
 <!--more-->
 
-Essentially, it's sufficient to follow the [quickstart tutorial](https://github.com/zalando/postgres-operator/blob/master/docs/quickstart.md). There is only a caveat. I am running a bare metal K3s cluster. By default, the operator will try to create a `PersistentVolumeClaim` with the default storage class of the Cluster. Problem is, my cluster didn't have a default storage class. The `PersistentVolumeClaim` fails, and looking at the events it becomes clear what's the problem: `FailedBinding: no persistent volumes available for this claim and no storage class is set`.
+Essentially, it's sufficient to follow the [quickstart tutorial](https://github.com/zalando/postgres-operator/blob/master/docs/quickstart.md). There is only a caveat. I am running a bare metal K3s cluster. By default, the operator will try to create a `PersistentVolumeClaim` with the default storage class of the cluster. Problem is, my cluster didn't have a default storage class. The `PersistentVolumeClaim` fails, and looking at the events it becomes clear what's the problem: `FailedBinding: no persistent volumes available for this claim and no storage class is set`.
 
 ![Failed persistent volume binding](/images/uploads/screenshot-2022-02-06-at-11.37.30.png)
 
@@ -29,14 +29,14 @@ kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisione
 And then we set it as default storage class with 
 
 ```bash
-kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
 Here's a recap of all commands I used to deploy the postgres cluster:
 ```bash
 # setup default storage class to be local-path
 kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
-kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 # deploy the operator
 kubectl apply -k github.com/zalando/postgres-operator/manifests
 # deploy a minimal cluster
