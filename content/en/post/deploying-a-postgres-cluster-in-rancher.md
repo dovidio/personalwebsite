@@ -9,6 +9,8 @@ subtitle: Deploying a Postgres cluster on Kubernetes has become quite easy
   can be done with a rancher cluster.
 tags:
   - postgres
+  - kubernetes
+  - rancher
 ---
 Deploying a Postgres cluster on Kubernetes has become quite easy thanks to the [Postgres Operator](https://github.com/zalando/postgres-operator). Let's see how this can be done with a rancher cluster.
 
