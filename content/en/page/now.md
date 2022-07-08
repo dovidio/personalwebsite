@@ -6,17 +6,7 @@ subtitle: What am I doing now?
 ---
 
 ## Work
-I'm working for [Paysafe](https://www.paysafe.com/), a company focusing on online payments.
-Most of my work involves Java, Javascript, and SQL.
+I'm working for [Gentics](https://gentics.com/), on an Open Source [Headless CMS](https://github.com/gentics/mesh).
 
 ## Free time
-I spend my free time running, reading, blogging, learning german and working on side projects.
-
-## Music
-A couple of pearls I've recently discovered:
-- [Bag Raiders - Sunlight](https://open.spotify.com/track/0UJSqvoNqME71nlzSa3H7E)
-- [Gino Soccio - Dancer](https://open.spotify.com/track/4lteGaLzU5veJOe6wnOvz4)
-- [M83 - Hell Riders](https://open.spotify.com/track/5SrF0wLZZq1gbG71amy8uU)
-
-## Books
-I'm currently getting deeper into Quarkus and I can recommend this wonderful fascicle from Antonio Goncalves: https://developers.redhat.com/books/understanding-quarkus
+I spend my free time playing guitar and working on side projects.
