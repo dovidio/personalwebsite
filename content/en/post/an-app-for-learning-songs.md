@@ -3,6 +3,8 @@ title: An app for learning songs
 date: 2022-09-27T17:09:14.800Z
 image: /images/uploads/frame-1.png
 ---
+
+
 R﻿ecently I have been playing quite a lot of guitar. One approach I use to learn songs is to just play along with the original song.
 This approach has a couple of problems though:
 
