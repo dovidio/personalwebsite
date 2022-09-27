@@ -23,8 +23,11 @@ Guitar Pro offers an excellent solution to this problem, you can download the gu
 
 That's why I decided to build a small app I could use to learn songs.
 At the beginning, the idea was to have a native Mac App. On a basic level, user could add a song, select a part of the song and even modify the speed.
+
 After building the first prototype, I've realized that it would be much cooler if user wouldn't have to manually add a file, but could just search the songs inside the app. Luckily, Apple provides [Music Kit](https://developer.apple.com/musickit), a library that allows to programmatically interact with the Apple Music catalog. I've decided to use this library, and since it currently [does't work correctly on Mac](https://developer.apple.com/forums/thread/698902), I've pivoted to iOS and iPadOS.
-Now users can search any songs from the Apple Music Catalog, select a section, loop it, and even change the speed or define a speed progression.
+
+Here's [Loop Trainer](https://apps.apple.com/us/app/looptrainer/id1634854221) on the Apple App Store.
+Users can search any songs from the Apple Music Catalog, select a section, loop it, and even change the speed or define a speed progression.
 I am still planning to release the initial Mac prototype since it might still be useful for someone, but this will come at a later time.
 
 
