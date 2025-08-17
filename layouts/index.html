@@ -1,0 +1,28 @@
+{{ define "main" }}
+<content>
+  <h1>Welcome to my blog</h1>
+  <p>Hi, I'm Umberto D'Ovidio. This is where I share my thoughts on technology, development, and various other topics.</p>
+  
+  <p>Feel free to explore my posts in <a href="/en/">English</a> or <a href="/it/">Italiano</a>.</p>
+  
+  <hr>
+  
+  <h2>All Blog Posts</h2>
+  <ul class="blog-posts">
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  
+
+</content>
+{{ end }} 

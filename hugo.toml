@@ -1,0 +1,50 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Umberto D'Ovidio"
+theme = "hugo-bearblog"
+defaultContentLanguage = "en"
+copyright = "Copyright © 2020, Jane Doe."
+
+
+enableRobotsTXT = true
+
+[Params]
+  homeTitle = "Blog"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  mainSections = ["post"]
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  wordCount = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+
+[languages]
+  [languages.en]
+    contentDir = "content/en" # English
+    flagName = "gb" 
+    LanguageName = "English"
+  [languages.it] 
+    contentDir = "content/it" # Italian
+    flagName = "it"
+    LanguageName = "Italiano"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
+    
+
+
+[markup]
+  [markup.highlight]
+    style = 'friendly'
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+    tabWidth = 2
+    useClasses = true
+
