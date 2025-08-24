@@ -5,8 +5,6 @@ draft: false
 tags: ["igiene digitale", "openai"]
 ---
 
-# Costruire il tuo Digest RSS Alimentato da IA 
-
 In un'era di sovraccarico informativo, rimanere aggiornati con le ultime notizie preferite può essere impegnativo.
 Inoltre, internet è pieno di contenuti clickbait che ci distraggono dalle informazioni davvero importanti.
 I feed RSS offrono una soluzione, ma chi ha tempo di leggere decine di articoli ogni giorno? Questo tutorial ti mostra come costruire un digest intelligente RSS che riassume automaticamente i contenuti usando l'IA.

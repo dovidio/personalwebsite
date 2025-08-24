@@ -5,8 +5,6 @@ draft: false
 tags: ["digital hygiene", "openai"]
 ---
 
-# Building Your Own LLM-Powered RSS Digest
-
 In an era of information overload, staying up-to-date with your favorite blogs and news sources can be overwhelming.
 On top of that, the internet is full of click bait content, that distract us from the real important information.
 RSS feeds offer a solution, but who has time to read dozens of articles daily? This tutorial shows you how to build an intelligent RSS digest that automatically summarizes content using AI.

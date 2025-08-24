@@ -5,8 +5,6 @@ draft: false
 tags: ["digital hygiene", "holidays"]
 ---
 
-# Thailand Made Me Rethink My Phone
-
 Holidays are often seen as a time for rest and relaxation.  
 For me, they’ve usually been the opposite. Traveling, planning, and navigating constant surprises always left me feeling more stressed than working.  
 But somewhere in that chaos, I’ve realised that holidays could also be a pause — a chance to reflect. What’s working in my life? What’s draining me? And increasingly, I noticed the same answer popping up: my relationship with technology.  

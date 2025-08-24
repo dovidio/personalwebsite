@@ -5,8 +5,6 @@ draft: false
 tags: ["digital hygiene", "holidays"]
 ---
 
-# La Thailandia mi ha fatto ripensare al mio telefono
-
 Le vacanze sono spesso viste come un momento di riposo e relax.  
 Per me, di solito, sono state l’opposto. Viaggi, pianificazione e continue sorprese mi stressano piu' che lavorare.
 Ma in mezzo a quel caos, ho capito che le vacanze potevano anche essere una pausa: un’occasione per riflettere. Cosa funziona nella mia vita? Cosa mi prosciuga? Sempre più spesso, la risposta era la stessa: il mio rapporto con la tecnologia.
