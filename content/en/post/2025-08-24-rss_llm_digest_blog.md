@@ -1,6 +1,6 @@
 ---
 title: "Building Your Own LLM-Powered RSS Digest"
-date: 2025-08-24T10:42:16+01:00
+date: 2025-08-24T07:42:16+01:00
 draft: false  
 tags: ["digital hygiene", "openai"]
 ---

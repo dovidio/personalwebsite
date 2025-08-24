@@ -1,6 +1,6 @@
 ---
 title: "Costruire il tuo Digest RSS Alimentato da "
-date: 2025-08-24T10:42:16+01:00
+date: 2025-08-24T07:42:16+01:00
 draft: false  
 tags: ["igiene digitale", "openai"]
 ---
