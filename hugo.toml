@@ -36,6 +36,18 @@ enableRobotsTXT = true
     name = "Blog"
     url = "/"
     weight = 1
+
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 2
+
+[languages.it.menu]
+  [[languages.it.menu.main]]
+    name = "RSS"
+    url = "/it/index.xml"
+    weight = 2
     
 
 
@@ -48,3 +60,6 @@ enableRobotsTXT = true
     tabWidth = 2
     useClasses = true
 
+[outputs]
+  # Ensure the homepage generates an RSS feed
+  home = ["HTML", "RSS"]
