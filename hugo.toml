@@ -53,7 +53,7 @@ enableRobotsTXT = true
 
 [markup]
   [markup.highlight]
-    style = 'friendly'
+    style = 'github'
     lineNos = true
     lineNumbersInTable = false
     noClasses = false

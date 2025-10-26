@@ -1,27 +1,31 @@
-<!-- Custom syntax highlighting and styles -->
+<!-- Custom syntax highlighting and copy functionality -->
 <style>
-  /* Enhanced code block styling */
+  /* Override theme's generic code styling */
   .highlight {
-    background-color: var(--code-background-color);
-    border-radius: 6px;
-    padding: 16px;
-    margin: 16px 0;
-    overflow-x: auto;
-    border: 1px solid #e1e4e8;
+    background-color: var(--code-background-color) !important;
+    color: var(--code-color) !important;
+    border-radius: 6px !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    overflow-x: auto !important;
+    border: 1px solid #e1e4e8 !important;
+    position: relative;
   }
-  
+
   .highlight pre {
-    margin: 0;
-    padding: 0;
-    background: transparent;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: inherit !important;
   }
-  
+
   .highlight code {
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    color: inherit !important;
   }
-  
+
   /* Inline code styling */
   code:not(.highlight code) {
     background-color: var(--code-background-color);
@@ -31,14 +35,30 @@
     font-size: 0.9em;
     border: 1px solid #e1e4e8;
   }
-  
-  /* Line numbers */
+
+  /* Line numbers - make them non-copyable */
+  .highlight .lnt,
   .highlight .ln {
-    color: #6a737d;
-    margin-right: 16px;
-    user-select: none;
+    color: #6a737d !important;
+    margin-right: 16px !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    opacity: 0.6 !important;
   }
-  
+
+  /* Dark mode adjustments */
+  @media (prefers-color-scheme: dark) {
+    .highlight {
+      border-color: #30363d !important;
+    }
+    .highlight .lnt,
+    .highlight .ln {
+      color: #8b949e !important;
+    }
+  }
+
   /* Better blockquote styling */
   blockquote {
     border-left: 4px solid var(--link-color);
@@ -47,4 +67,159 @@
     background-color: var(--code-background-color);
     border-radius: 0 6px 6px 0;
   }
-</style> 
+
+  /* Copy button styling */
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    color: #24292e;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .copy-button:hover {
+    opacity: 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .copy-button {
+      background-color: #21262d;
+      border-color: #30363d;
+      color: #f0f6fc;
+    }
+  }
+</style>
+
+<!-- Add copy button functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add copy buttons to all code blocks
+  const codeBlocks = document.querySelectorAll('.highlight');
+
+  codeBlocks.forEach(function(block) {
+    // Skip if already has a copy button
+    if (block.querySelector('.copy-button')) return;
+
+    // Create copy button
+    const copyButton = document.createElement('button');
+    copyButton.innerHTML = 'Copy';
+    copyButton.className = 'copy-button';
+
+    // Copy functionality
+    copyButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      try {
+        // Get the text content from the code block
+        let textToCopy = '';
+        const codeElement = block.querySelector('code');
+
+        if (codeElement) {
+          // Clone the element to manipulate it safely
+          const codeClone = codeElement.cloneNode(true);
+
+          // Remove only the line number elements (.ln), leaving the code content (.cl)
+          const lineNumbers = codeClone.querySelectorAll('.ln');
+          lineNumbers.forEach(el => el.remove());
+
+          // Now get the text content from the remaining code elements
+          const codeLines = codeClone.querySelectorAll('.cl');
+          const cleanLines = [];
+
+          codeLines.forEach(line => {
+            const text = line.textContent || line.innerText;
+            if (text && text.trim()) {
+              // Clean up any extra whitespace and line continuation markers
+              const cleanLine = text
+                .replace(/\\\s*$/g, '')  // Remove line continuation markers
+                .replace(/\s+/g, ' ')    // Replace multiple spaces with single space
+                .trim();
+
+              if (cleanLine) {
+                cleanLines.push(cleanLine);
+              }
+            }
+          });
+
+          textToCopy = cleanLines.join('\n');
+        }
+
+        if (!textToCopy.trim()) {
+          // Fallback to pre element if code element is empty
+          const preElement = block.querySelector('pre');
+          if (preElement) {
+            textToCopy = preElement.textContent || preElement.innerText;
+          }
+        }
+
+        if (textToCopy.trim()) {
+          // Use the modern Clipboard API
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(textToCopy).then(function() {
+              copyButton.innerHTML = '✓ Copied!';
+              setTimeout(function() {
+                copyButton.innerHTML = 'Copy';
+              }, 2000);
+            }).catch(function(err) {
+              // Fallback to older method
+              fallbackCopyText(textToCopy, copyButton);
+            });
+          } else {
+            // Fallback for older browsers
+            fallbackCopyText(textToCopy, copyButton);
+          }
+        } else {
+          copyButton.innerHTML = '✗ Empty';
+          setTimeout(function() {
+            copyButton.innerHTML = 'Copy';
+          }, 2000);
+        }
+      } catch (err) {
+        copyButton.innerHTML = '✗ Error';
+        setTimeout(function() {
+          copyButton.innerHTML = 'Copy';
+        }, 2000);
+        console.error('Copy error:', err);
+      }
+    });
+
+    function fallbackCopyText(text, button) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        button.innerHTML = '✓ Copied!';
+        setTimeout(function() {
+          button.innerHTML = 'Copy';
+        }, 2000);
+      } catch (err) {
+        button.innerHTML = '✗ Failed';
+        setTimeout(function() {
+          button.innerHTML = 'Copy';
+        }, 2000);
+      }
+
+      document.body.removeChild(textArea);
+    }
+
+    // Add button to block
+    block.appendChild(copyButton);
+  });
+});
+</script> 
