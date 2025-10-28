@@ -150,18 +150,6 @@ argocd app get guestbook
 
 Puoi anche visualizzare l'applicazione nell'interfaccia web a `https://localhost:8080` - vedrai una bella visualizzazione di tutte le risorse Kubernetes che compongono l'app guestbook.
 
-## Passo 9: Accedere all'Interfaccia Senza Port Forwarding
-
-Il metodo port-forward funziona bene per l'accesso temporaneo, ma richiede di tenere aperta una finestra del terminale. Per l'uso regolare, puoi accedere alla dashboard di Argo CD usando:
-
-```bash
-argocd admin dashboard -n argocd
-```
-
-Questo comando aprirà automaticamente il tuo browser e gestirà il port forwarding per te.
-
-Se vuoi esporre Argo CD al mondo esterno permanentemente, la documentazione ufficiale di Argo CD ha guide dettagliate sulla configurazione di ingress con vari ingress controller. Per il mio caso d'uso personale, non ho bisogno di accesso esterno dato che posso usare il comando admin dashboard ogni volta che ho bisogno di controllare i miei deployment.
-
 ## Cosa Succede Dopo?
 
 Ora che abbiamo Argo CD in esecuzione, abbiamo una solida base per gestire le applicazioni nel nostro cluster. Nelle prossime parti di questa serie, copriremo:
