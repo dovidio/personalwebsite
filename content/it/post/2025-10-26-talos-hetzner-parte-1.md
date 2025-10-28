@@ -287,7 +287,7 @@ kubectl get deployments -n kube-system
 ## Prossimi passi?
 
 Nelle prossime parti di questa serie, tratteremo:
-- Configurare ArgoCD
+- [Configurare ArgoCD](/post/2025-10-27-talos-hetzner-parte-2/) (Parte 2)
 - Configurare lo storage con Longhorn
 - Deploy di [Navidrome](https://www.navidrome.org/) per lo streaming musicale
 
