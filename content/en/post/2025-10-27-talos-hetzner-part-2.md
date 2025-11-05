@@ -154,7 +154,7 @@ You can also view the application in the web UI at `https://localhost:8080` - yo
 
 Now that we have Argo CD running, we have a solid foundation for managing applications in our cluster. In the next parts of this series, we'll cover:
 
-- Setting up storage with Longhorn
+- [Setting up storage with Longhorn](/post/2025-10-28-talos-hetzner-part-3/) (Part 3)
 - Deploying real applications like Navidrome for music streaming
 - Managing those applications with Argo CD
 

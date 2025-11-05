@@ -154,7 +154,7 @@ Puoi anche visualizzare l'applicazione nell'interfaccia web a `https://localhost
 
 Ora che abbiamo Argo CD in esecuzione, abbiamo una solida base per gestire le applicazioni nel nostro cluster. Nelle prossime parti di questa serie, copriremo:
 
-- Configurazione dello storage con Longhorn
+- [Configurazione dello storage con Longhorn](/post/2025-10-28-talos-hetzner-parte-3/) (Parte 3)
 - Deploy di applicazioni reali come Navidrome per lo streaming musicale
 - Gestione di quelle applicazioni con Argo CD
 
