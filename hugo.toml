@@ -1,15 +1,16 @@
-baseURL = "/"
+baseURL = "https://umberto.xyz/"
 languageCode = "en-us"
 title = "Umberto D'Ovidio"
 theme = "zenith"
 defaultContentLanguage = "en"
-copyright = "Copyright © 2020, Jane Doe."
+copyright = "© 2026 Umberto D'Ovidio"
 
 
 enableRobotsTXT = true
 
 [Params]
   favicon = "img/favicon.ico"
+  description = "Dad and software crafter. Tools I build for myself, and notes on the ones that shipped."
   dateFormat = "2 January 2006"
   mainSections = ["post"]
   readingTime = true
